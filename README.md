@@ -37,6 +37,12 @@ trunk serve             # Debug Build
 trunk serve --release   # Release Build
 ```
 
+## Deploying to GitHub Pages
+
+A workflow for deploying to GitHub pages is setup in [`.github/workflows/static.yml`](./.github/workflows/static.yml). This runs automatically when any of the source files change on the `master` branch or manually via the `Actions` tab on GitHub.
+
+To enable this for the repository, go to `Settings -> Pages -> Build and deployment`, and set the source to `GitHub Actions`.
+
 ## Outstanding Issues
 
 - [WASM: Canvas is stuck at a fixed size](https://github.com/iced-rs/iced/issues/1265)
