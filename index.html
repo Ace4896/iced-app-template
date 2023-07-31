@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Iced App</title>
-    <base data-trunk-public-url />
-  </head>
-  <body>
-    <link
-      data-trunk
-      rel="rust"
-      href="Cargo.toml"
-      data-wasm-opt="z"
-      data-bin="iced-app-template"
-    />
-  </body>
+
+<head>
+  <meta charset="utf-8" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iced App</title>
+  <base data-trunk-public-url />
+
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#202225">
+
+  <style>
+    html {
+      /* Remove touch delay: */
+      touch-action: manipulation;
+    }
+
+    body {
+      /* Light mode background color for what is not covered by the Iced canvas. */
+      background: white;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        /* Dark mode background color for what is not covered by the Iced canvas. */
+        background: #202225;
+      }
+    }
+
+    /* Allow canvas to fill entire web page: */
+    html,
+    body {
+      overflow: hidden;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Position canvas in center-top: */
+    canvas {
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  </style>
+</head>
+
+<body>
+  <link data-trunk rel="rust" href="Cargo.toml" data-wasm-opt="z" data-bin="iced-app-template" />
+</body>
+
 </html>
