@@ -7,3 +7,6 @@ edition = "2021"
 
 [dependencies]
 iced = { version = "0.10", features = ["smol"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-timer = "0.2"

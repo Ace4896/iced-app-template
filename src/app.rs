@@ -1,4 +1,10 @@
-use std::time::{Duration, Instant};
+use std::time::Duration;
+
+#[cfg(not(target_arch = "wasm32"))]
+use std::time::Instant;
+
+#[cfg(target_arch = "wasm32")]
+use wasm_timer::Instant;
 
 use iced::{
     alignment, executor, theme, time, widget, Application, Command, Element, Length, Subscription,
@@ -67,7 +73,9 @@ impl Application for App {
     fn subscription(&self) -> Subscription<Self::Message> {
         match self.state {
             State::Idle => Subscription::none(),
-            State::Ticking { .. } => time::every(Duration::from_millis(10)).map(Message::Tick),
+            State::Ticking { .. } => {
+                time::every(Duration::from_millis(10)).map(|i| Message::Tick(i))
+            }
         }
     }
 

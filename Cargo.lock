@@ -1023,6 +1023,7 @@ name = "iced-xplat-template"
 version = "0.1.0"
 dependencies = [
  "iced",
+ "wasm-timer",
 ]
 
 [[package]]
