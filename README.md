@@ -1,4 +1,4 @@
-# iced-xplat-template
+# iced-app-template
 
 A template project for [Iced](https://iced.rs/) which can run natively and on the Web via wgpu.
 
@@ -8,6 +8,14 @@ A template project for [Iced](https://iced.rs/) which can run natively and on th
 - [Iced Dependencies](https://github.com/iced-rs/iced/blob/master/DEPENDENCIES.md)
 
 ## Usage
+
+First, you'll need to rename a few fields:
+
+- In [`Cargo.toml`](./Cargo.toml), replace `iced-app-template` with your crate name
+- In [`index.html`](./index.html):
+  - In the `<title>` tag, replace `Iced App` with your app name
+  - In the `<link data-trunk rel="rust" href="Cargo.toml" ...>` tag, replace `iced-app-template` with your crate name
+- In [`src/app.rs`](./src/app.rs), replace the `Iced App` title with your app name
 
 To run the app natively, use `cargo run` as normal:
 

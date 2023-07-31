@@ -45,7 +45,7 @@ impl Application for App {
     }
 
     fn title(&self) -> String {
-        String::from("Stopwatch - Iced")
+        String::from("Iced App")
     }
 
     fn update(&mut self, message: Self::Message) -> Command<Self::Message> {
