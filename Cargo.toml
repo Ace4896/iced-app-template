@@ -4,7 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-iced = { version = "0.10", features = ["smol"] }
+iced = { version = "0.10", features = [
+    # Available features can be found in: https://github.com/iced-rs/iced/blob/master/Cargo.toml
+    "smol", # Use the 'smol' futures executor when running natively. Alternatives: 'tokio', 'async-std'
+] }
 
+# WASM timer dependency; only used for the template app
+# You can remove this if you're not using any timer events
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-timer = "0.2"
